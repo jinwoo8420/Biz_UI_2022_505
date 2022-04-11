@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+      }
+
+      nav {
+        flex: 1;
+        vertical-align: top;
+        border: 1px solid green;
+        padding: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+      }
+
+      nav li {
+        border-bottom: 1px solid red;
+        padding: 10px;
+
+        /*
+        box-shadow: x y 색상
+        inset은 그림자를 box 안쪽으로 들어가게함
+        */
+
+        box-shadow: inset 0 0 0 #d80d86;
+        transition: 0.5s;
+      }
+
+      nav li:hover {
+        box-shadow: inset 400px 0 0 #d80d86;
+        cursor: pointer;
+      }
+
+      section {
+        flex: 6;
+        padding: 10px;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li>HOME</li>
+        <li>회사소개</li>
+        <li>공지사항</li>
+        <li>자유게시판</li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        통신·방송의 시설기준과 신문의 기능을 보장하기 위하여 필요한 사항은
+        법률로 정한다. 대통령은 취임에 즈음하여 다음의 선서를 한다. 이 헌법시행
+        당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고
+        있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그
+        직무를 행한다.
+      </article>
+      <article>
+        국회는 선전포고, 국군의 외국에의 파견 또는 외국군대의 대한민국
+        영역안에서의 주류에 대한 동의권을 가진다. 공공필요에 의한 재산권의
+        수용·사용 또는 제한 및 그에 대한 보상은 법률로써 하되, 정당한 보상을
+        지급하여야 한다. 중앙선거관리위원회는 대통령이 임명하는 3인, 국회에서
+        선출하는 3인과 대법원장이 지명하는 3인의 위원으로 구성한다. 위원장은
+        위원중에서 호선한다.
+      </article>
+      <article>
+        행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다.
+        대통령은 국회에 출석하여 발언하거나 서한으로 의견을 표시할 수 있다.
+        대통령의 선거에 관한 사항은 법률로 정한다. 각급 선거관리위원회는
+        선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에
+        필요한 지시를 할 수 있다.
+      </article>
+    </section>
+  </body>
+</html>
