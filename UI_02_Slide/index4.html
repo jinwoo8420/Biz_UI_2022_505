@@ -11,13 +11,11 @@
         margin: 0;
         padding: 0;
       }
-
       html,
       body {
         width: 100vw;
         height: 100vh;
       }
-
       body {
         display: flex;
         flex-direction: column;
@@ -30,11 +28,9 @@
         height: 400px;
         transition: 1s;
       }
-
       div.images img {
         width: 600px;
       }
-
       div.image_window {
         width: 600px;
         height: 400px;
@@ -46,7 +42,7 @@
         width: 600px;
         display: flex;
         position: absolute;
-        left: 0%;
+        left: 0;
         bottom: 0;
         padding: 30px 20px;
         z-index: 100;
@@ -70,6 +66,7 @@
         color: #fff;
         display: inline-block;
         border-radius: 50%;
+
         border: 2px solid white;
         width: 15px;
         height: 15px;
@@ -93,7 +90,6 @@
       button.btn.prev {
         margin-right: auto;
       }
-
       button.btn.next {
         margin-left: auto;
       }
@@ -151,6 +147,32 @@
           });
 
           divBadge.appendChild(span); // 생성된 span tag를 div.badge tag에 child로 추가
+        }
+
+        let count = 0;
+
+        const interval_cb = (e) => {
+          badge_click_cb(e, ++count % ingCount);
+          if (count > ingCount * 100) count = 0;
+        };
+
+        // 2초마다 슬라이딩 되도록 설정
+        let interval = setInterval(interval_cb, 2000);
+
+        /*
+        div.image.window에 마우스오버 되면 interval 취소
+        div.image.window에서 마우스아웃 되면 다시 시작
+        */
+        const img_window = document.querySelector("div.image_window");
+
+        // 마우스가 이미지에 올라가면 interval 취소
+        if (img_window) {
+          img_window.addEventListener("mouseover", () => {
+            clearInterval(interval);
+          });
+          img_window.addEventListener("mouseout", () => {
+            interval.setInterval(interval_cb, 2000);
+          });
         }
       }); // end document.addEventListener("DOMContentLoaded")
     </script>
